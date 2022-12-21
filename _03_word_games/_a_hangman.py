@@ -7,8 +7,7 @@ from tkinter import messagebox
 #  word_to_guess = orange (a string)
 #  return          ______ (a string with 6 underscores)
 def setup_new_word(word_to_guess):
-
-    return str()
+    return str("_" * len(word_to_guess))
 
 # TODO 2) Complete the function to return whether the letter is in
 #  the word to guess
@@ -16,8 +15,7 @@ def setup_new_word(word_to_guess):
 #  letter = o (a string)
 #  return True
 def check_letter_in_word(word_to_guess, letter):
-
-    return False
+    return letter in word_to_guess
 
 # TODO 3) Complete the function to return the current guess with the
 #  letter in the same places (index) of the word to guess. For example,
@@ -27,8 +25,11 @@ def check_letter_in_word(word_to_guess, letter):
 #       return o__nge (a string)
 #  Remember that strings can't be changed directly!
 def replace_letter_in_word(word_to_guess, current_guess, letter):
-
-    return str()
+    current = list(current_guess)
+    for idx, letterInWord in enumerate(word_to_guess):
+        if letterInWord == letter:
+            current[idx] = letter
+    return "".join(current)
 
 # ====================== DO NOT EDIT THE CODE BELOW ===========================
 
